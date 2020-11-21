@@ -1,0 +1,24 @@
+{
+  "name": "aframehandmenustest",
+  "version": "1.0.0",
+  "description": "AFrameHandMenus test",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "none"
+  },
+  "keywords": [
+    "a-frame"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "aframe": "^1.0.4",
+    "webpack": "^5.6.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
