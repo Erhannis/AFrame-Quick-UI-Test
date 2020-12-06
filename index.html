@@ -1,6 +1,7 @@
 <html>
     <head>
-        <script src="vendor/aframe-v1.0.4.js"></script>
+        <!-- <script src="vendor/aframe-v1.0.4.js"></script> -->
+        <script src="build.js"></script>
     </head>
     <body>
         <a-scene>
@@ -9,6 +10,37 @@
             <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
             <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
             <a-sky color="#ECECEC"></a-sky>
+
+            <a-assets>
+                <audio id="ui_menu" src="assets/sounds/ui_menu.ogg"></audio> <!-- //TODO Maybe don't have this?  Lite version? -->
+            </a-assets>
+
+            <a-entity id="cameraRig">
+                <!-- camera -->
+                <a-entity id="acamera" camera wasd-controls look-controls orbit-controls></a-entity>
+                <!-- hand controls -->
+                <a-entity id="left-hand"
+                          paint-controls="hand: left"
+                          ui>
+                            <script> //TODO Yeah, I know this isn't the most kosher solution, but I'm not sure how to extend the class/entity system, yet
+                              HandMenu.loadUi(({UI}) => // `UI` is just a convenience abbreviation, equal to HandMenu
+                                UI.FoldLayout({},
+                                  UI.PageLayout({autodistribute:true,gridparams:{cols:3,rows:5}},
+                                    ...([...Array(100).keys()].map(i => UI.UiButton({text:`${i+1}`, oncontrollerdown:()=>{console.log(i)}})))
+                                  ),
+                                  UI.UiText({text:"Middle"}),
+                                  UI.UiText({text:"Right"})
+                                )
+                              );
+                            </script>
+                </a-entity>
+                <a-entity id="right-hand"
+                          paint-controls="hand: right"
+                          ui>
+                          <script src="src/ui.js"></script> <!-- You could do a different ui, or the same, or put the script in a file -->
+                </a-entity>
+              </a-entity>
+        
           </a-scene>
     </body>
 </html>
