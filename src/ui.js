@@ -3,21 +3,14 @@
  */
 
 console.log("uitest start");
-document.currentScript.parentElement.addEventListener('requestforui', function addUi ({detail:{uiEl}}) {
-    console.log("uitest requestforui rx");
-    let UI = HandMenu;
-
-    let brushes = [...Array(100).keys()].map(i => UI.UiButton({text:`${i+1}`}));
-
-    let pagesUi = UI.UiRoot(
-      UI.FoldLayout({},
-        UI.PageLayout({autodistribute:true,gridparams:{cols:3,rows:5}},
-          ...brushes
-        ),
-        UI.UiText({text:"Middle"}),
-        UI.UiText({text:"Right"})
-      )
-    );
-
-    uiEl.appendChild(pagesUi);
-  });
+HandMenu.loadUi(({UI}) =>
+  UI.FoldLayout({},
+    UI.PageLayout({autodistribute:true,gridparams:{cols:4,rows:4}},
+      ...([...Array(16).keys()].map(i => UI.UiButton({size:[2,2],text:`${i+1}`})))
+    ),
+    UI.UiText({text:"Middle\ntext\nhere"}),
+    UI.PageLayout({autodistribute:true,gridparams:{cols:4,rows:4}},
+      ...([...Array(16).keys()].map(i => UI.UiButton({size:[2,2],text:`${i+1}`})))
+    )
+  )
+);

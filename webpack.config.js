@@ -14,14 +14,6 @@ module.exports = {
   optimization: {
     minimize: false
   },
-  module: {
-    rules: [
-      {
-        test: /\.json$/,
-        use: 'json-loader'
-      }
-    ]
-  },
   plugins: PLUGINS,
   devServer: {
     disableHostCheck: true
