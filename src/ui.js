@@ -3,7 +3,7 @@
  */
 
 console.log("uitest start");
-HandMenu.loadUi(({UI}) =>
+QuickUI.loadUi(({UI}) =>
   UI.FoldLayout({},
     UI.PageLayout({autodistribute:true,gridparams:{cols:4,rows:4}},
       ...([...Array(16).keys()].map(i => UI.UiButton({size:[2,2],text:`${i+1}`})))

@@ -1,5 +1,4 @@
-console.log("AFrameHandMenusTest loading");
-/* // Do like this to replace model
+/* // Do like this to replace controller models:
 window.CONTROLLER_MODELS = {};
 window.CONTROLLER_MODELS["vive-controls"] = {type: "json-model", data: {src: 'assets/models/controller_vive.json'}};
 
@@ -12,4 +11,4 @@ window.CONTROLLER_MODELS["oculus-touch-controls"] = {
   }
 };
 */
-require("aframehandmenus");
+require("aframe-quick-ui");
