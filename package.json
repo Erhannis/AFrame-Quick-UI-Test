@@ -20,7 +20,7 @@
   "license": "MIT",
   "dependencies": {
     "aframe": "^1.0.4",
-    "aframe-quick-ui": "file:../AFrame-Quick-UI",
+    "aframe-quick-ui": "^1.0.0",
     "json-loader": "^0.5.7",
     "webpack": "^5.6.0",
     "webpack-cli": "^4.2.0",
