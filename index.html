@@ -18,7 +18,7 @@
             <a-entity id="cameraRig">
                 <a-entity id="acamera" camera wasd-controls look-controls orbit-controls></a-entity>
                 <a-entity id="left-hand"
-                          paint-controls="hand: left"
+                          ui-controller="hand: left"
                           ui>
                             <script> //TODO Yeah, I know this isn't the most kosher solution, but I'm not sure how to extend the class/entity system, yet
                               QuickUI.loadUi(({UI}) => // `UI` is just a convenience abbreviation, equal to QuickUI
@@ -33,7 +33,7 @@
                             </script>
                 </a-entity>
                 <a-entity id="right-hand"
-                          paint-controls="hand: right"
+                          ui-controller="hand: right"
                           ui>
                           <script src="src/ui.js"></script> <!-- You could do a different ui, or the same, or put the script in a file -->
                 </a-entity>
