@@ -8,12 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "none"
+    "url": "https://github.com/Erhannis/AFrame-Quick-UI-Test.git"
   },
   "keywords": [
-    "a-frame"
+    "a-frame",
+    "menu",
+    "menus",
+    "ui"
   ],
-  "author": "",
+  "author": "Erhannis (https://github.com/Erhannis)",
   "license": "MIT",
   "dependencies": {
     "aframe": "^1.0.4",
